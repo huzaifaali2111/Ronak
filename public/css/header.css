@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    
+    /* Gradient Configuration */
+    background: linear-gradient(
+        180deg, 
+        #fcd45c 0%,    /* Yellow */
+        #fa7e36 40%,   /* Orange */
+        #d12354 70%,   /* Pink/Red */
+        #751560 100%   /* Purple */
+    );
+    
+    /* Text Clipping Magic */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
