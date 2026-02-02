@@ -1,10 +1,8 @@
-/* --- FOOTER STYLES --- */
-
 .footer {
-    background-color: #1a1a1a; /* Dark background for contrast */
+    background-color: #1a1a1a;
     color: #ffffff;
     padding-top: 60px;
-    margin-top: auto; /* Pushes footer to bottom if page is short */
+    margin-top: auto;
 }
 
 .footer_container {
@@ -12,7 +10,6 @@
     margin: 0 auto;
     padding: 0 5%;
     display: grid;
-    /* Responsive Grid: Creates columns that are at least 250px wide */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
 }
@@ -38,7 +35,7 @@
 }
 
 .footer_text {
-    color: #b3b3b3; /* Light grey text is easier to read than pure white */
+    color: #b3b3b3;
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 15px;
@@ -62,7 +59,11 @@
 
 .footer_col ul li a:hover {
     color: #fff;
-    padding-left: 5px; /* Subtle movement effect */
+    padding-left: 5px;
+    background: linear-gradient(180deg, #fa7e36 0%, #d12354 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Social Icons */
@@ -85,12 +86,11 @@
 }
 
 .social_icons a:hover {
-    /* Gradient Background on Hover */
     background: linear-gradient(135deg, #fa7e36, #d12354);
     transform: translateY(-3px);
 }
 
-/* Newsletter Form */
+
 .newsletter_form {
     display: flex;
     background: #2b2b2b;
@@ -134,4 +134,12 @@
     margin-top: 50px;
     color: #777;
     font-size: 14px;
+}
+
+.ronak_footer {
+    font-size: 16px;
+    font-weight: 500;
+    background: linear-gradient(180deg, #fcd45c 0%, #fa7e36 40%, #d12354 70%, #751560 100%);
+    background-clip: text;
+    color: transparent;
 }

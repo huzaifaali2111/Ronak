@@ -1,17 +1,26 @@
 <link rel="stylesheet" href="css/header.css">
 <header>
-        <a href="#" class="logo">Ronak</a>
+    <a href="/" class="logo">Ronak</a>
 
-        <nav class="header_nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
 
-        <div class="header_cta">
-            <button>Get Started</button>
-        </div>
-    </header>
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="header_nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/events">Hot Events</a></li>
+            <li><a href="/guideline">Join Guideline</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+            <li class="mobile-cta"><a href="#">Create event</a></li> 
+        </ul>
+    </nav>
+
+    <div class="header_cta">
+        <button>Create Event</button>
+    </div>
+</header>
