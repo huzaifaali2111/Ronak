@@ -1,21 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
-.logo {
+/* --- Global Reset --- */
+body {
+    margin: 0;
+    padding: 0;
     font-family: 'Fredoka', sans-serif;
-    font-size: 40px;
+    background-color: #f9f9f9; /* Slight off-white usually looks more premium than pure white */
+}
+
+/* --- Header Layout (Grid Technique) --- */
+header {
+    display: grid;
+    /* 1fr (Left space) - Auto (Nav width) - 1fr (Right space) */
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 5%; /* 5% padding on sides keeps it responsive */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- 1. Logo Styling --- */
+.logo {
+    text-decoration: none;
+    font-size: 32px;
     font-weight: 600;
-    
-    /* Gradient Configuration */
-    background: linear-gradient(
-        180deg, 
-        #fcd45c 0%,    /* Yellow */
-        #fa7e36 40%,   /* Orange */
-        #d12354 70%,   /* Pink/Red */
-        #751560 100%   /* Purple */
-    );
-    
-    /* Text Clipping Magic */
+    justify-self: start; /* Forces logo to the far left */
+
+    /* Your Gradient Configuration */
+    background: linear-gradient(180deg, #fcd45c 0%, #fa7e36 40%, #d12354 70%, #751560 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+/* --- 2. Nav Styling --- */
+.header_nav {
+    justify-self: center; /* Forces nav to the absolute center */
+}
+
+.header_nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px; /* Space between links */
+}
+
+.header_nav a {
+    text-decoration: none;
+    color: #333; /* Dark Grey is softer than Black */
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect: Gradient Text on Hover */
+.header_nav a:hover {
+    background: linear-gradient(180deg, #fa7e36 0%, #d12354 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* --- 3. Button Styling --- */
+.header_cta {
+    justify-self: end; /* Forces button to the far right */
+}
+
+header button {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    font-size: 16px;
+    
+    /* Gradient Background */
+    background: linear-gradient(135deg, #fa7e36 0%, #d12354 100%);
+    box-shadow: 0 4px 15px rgba(209, 35, 84, 0.3); /* Colored shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+header button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 20px rgba(209, 35, 84, 0.4);
+}
+
+/* --- Basic Responsive Fix for Mobile --- */
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr auto; /* Switch to 2 columns */
+    }
+    
+    .header_nav {
+        display: none; /* Hide nav links on small mobile screens */
+    }
+    
+    /* You would typically add a hamburger menu icon here */
 }
