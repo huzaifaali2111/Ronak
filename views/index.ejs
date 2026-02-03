@@ -62,15 +62,17 @@
                 <% allEvent.forEach(event => { %>
                     <article class="event-card">
                         <div class="card-image">
-                            <div class="img-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);"></div>
+                            <div class="img-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) ; ">
+                                 <img src="images/1316.jpg" alt="" > <!-- width 300px  height: 180px; -->
+                            </div>
                             <span class="card-badge"><%= event.event_type %></span>
                             <span class="card-price"><%= event.event_price %></span>
                         </div>
                         <div class="card-content">
                             <h3><%= event.event_name %></h3>
                             <div class="card-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> NIC, Islamabad</span>
-                                <span><i class="far fa-clock"></i> 10:00 AM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> <%= event.event_location %></span>
+                                <span><i class="far fa-clock"></i> <%= event.event_start_time %> -  <%= event.event_end_time %></span>     
                             </div>
                             <button class="join-btn">Join Event</button>
                         </div>

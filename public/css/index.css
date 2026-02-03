@@ -184,6 +184,10 @@ body {
     height: 100%;
     object-fit: cover;
 }
+.img-placeholder img{
+    height: 100%;
+    width: 100%;
+}
 
 .card-badge {
     position: absolute;
