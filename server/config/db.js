@@ -1,5 +1,11 @@
-const mongoose = require('mongooose');
+const mongoose = require('mongoose');
 const connectDB = async ()=>{
-    mongoose.set('StrictQuery', false)
-    const conn = await mongoose.connect(process.env.MONGODB_URI)
+    try {
+        mongoose.set('strictQuery', false)
+        const conn = await mongoose.connect(process.env.MONGODB_URI)
+        console.log("Chal malanga chal")
+    } catch (error) {
+        console.log(`a chak fr ${error} `)
+    }
 }
+module.exports = connectDB
