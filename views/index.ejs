@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="css/index.css">
-<body>
 
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
+
+
+<body>
     <section class="hero-minimal">
         <div class="container">
             <h1>Elevating Experiences</h1>
@@ -10,41 +13,10 @@
 
     <section class="controls-section">
         <div class="container">
-            
-            <div class="date-header">Select Date</div>
-            <div class="calendar-strip">
-                <div class="calendar-day active">
-                    <span class="day-name">Mon</span>
-                    <span class="day-number">10</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Tue</span>
-                    <span class="day-number">11</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Wed</span>
-                    <span class="day-number">12</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Thu</span>
-                    <span class="day-number">13</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Fri</span>
-                    <span class="day-number">14</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Sat</span>
-                    <span class="day-number">15</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Sun</span>
-                    <span class="day-number">16</span>
-                </div>
-                <div class="calendar-day">
-                    <span class="day-name">Mon</span>
-                    <span class="day-number">17</span>
-                </div>
+
+            <div class="date-header ">
+                <label>Filter by Date:</label>
+                <input type="text" id="datePicker" placeholder="Select Date.." class="date-input">
             </div>
 
             <div class="filter-pills">
@@ -59,28 +31,41 @@
     <section class="listings">
         <div class="container">
             <div class="grid-container">
-                <% allEvent.forEach(event => { %>
+                <% allEvent.forEach(event=> { %>
                     <article class="event-card">
                         <div class="card-image">
-                            <div class="img-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) ; ">
-                                 <img src="images/1316.jpg" alt="" > <!-- width 300px  height: 180px; -->
+                            <div class="img-placeholder"
+                                style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) ; ">
+                                <img src="images/1316.jpg" alt=""> <!-- width 300px  height: 180px; -->
                             </div>
-                            <span class="card-badge"><%= event.event_type %></span>
-                            <span class="card-price"><%= event.event_price %></span>
+                            <span class="card-badge">
+                                <%= event.event_type %>
+                            </span>
+                            <span class="card-price">
+                                <%= event.event_price==='free' || event.event_price===0 ? 'Free' : 'Rs ' +
+                                    event.event_price %>
+                            </span>
                         </div>
                         <div class="card-content">
-                            <h3><%= event.event_name %></h3>
+                            <h3>
+                                <%= event.event_name %>
+                            </h3>
                             <div class="card-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> <%= event.event_location %></span>
-                                <span><i class="far fa-clock"></i> <%= event.event_start_time %> -  <%= event.event_end_time %></span>     
+                                <span><i class="fas fa-map-marker-alt"></i>
+                                    <%= event.event_location %>
+                                </span>
+                                <span><i class="far fa-clock"></i>
+                                    <%= event.event_start_time %> - <%= event.event_end_time %>
+                                </span>
                             </div>
                             <button class="join-btn">Join Event</button>
                         </div>
                     </article>
-                <% }) %>
+                    <% }) %>
             </div>
         </div>
     </section>
 
 </body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ <script defer src="js/index.js"></script>

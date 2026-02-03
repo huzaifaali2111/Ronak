@@ -1,4 +1,6 @@
 /* --- Global & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
 :root {
     --primary: #1a1a1a; 
     --accent: #fa7e36;  
@@ -26,15 +28,15 @@ body {
 
 
 .hero-minimal {
-    padding: 60px 0 40px; 
-    text-align: left;
+    padding: 22px 0 23px; 
+    text-align: center;
     background: #ffffff;
 }
 
 .hero-minimal h1 {
     font-size: 3rem;
     font-weight: 600;
-    margin: 0 0 15px 0;
+    margin: 0 0 6px 0;
     letter-spacing: -1px;
     background: var(--brand-gradient);
     -webkit-background-clip: text;
@@ -46,8 +48,8 @@ body {
 .hero-minimal p {
     font-size: 1.15rem;
     color: var(--text-light);
-    margin: 0;
-    max-width: 600px;
+    max-width: 437px;
+    margin: auto;
     line-height: 1.6;
 }
 
@@ -57,7 +59,7 @@ body {
     border-bottom: 1px solid var(--border-color); 
 }
 
-/* Date Header */
+
 .date-header {
     font-weight: 600;
     font-size: 1.1rem;
@@ -65,58 +67,9 @@ body {
     color: var(--text-dark);
 }
 
-/* The Horizontal Calendar Strip */
-.calendar-strip {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto; /* Allows scrolling on small screens */
-    padding-bottom: 15px; /* Space for scrollbar */
-    margin-bottom: 25px;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
-}
-.calendar-strip::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
-}
-
-.calendar-day {
-    min-width: 65px;
-    height: 80px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: #fff;
-}
-
-.calendar-day:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* Active Day State */
-.calendar-day.active {
-    background: var(--brand-gradient);
-    border: none;
-    color: white;
-    box-shadow: 0 5px 15px rgba(209, 35, 84, 0.3);
-}
-
-.day-name {
-    font-size: 0.9rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.day-number {
-    font-size: 1.4rem;
-    font-weight: 600;
-}
 
 /* Category Pills */
+
 .filter-pills {
     display: flex;
     gap: 10px;
@@ -212,7 +165,7 @@ body {
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 600;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
