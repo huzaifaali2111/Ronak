@@ -16,7 +16,7 @@
 
             <div class="date-header ">
                 <label>Filter by Date:</label>
-                <input type="text" id="datePicker" placeholder="Select Date.." class="date-input">
+                <input type="date" id="datePicker" placeholder="Select Date.." class="date-input">
             </div>
 
             <div class="filter-pills">
@@ -57,6 +57,9 @@
                                 <span><i class="far fa-clock"></i>
                                     <%= event.event_start_time %> - <%= event.event_end_time %>
                                 </span>
+                                <span>
+                                    <%= event.event_date%>
+                                </span>
                             </div>
                             <button class="join-btn">Join Event</button>
                         </div>
@@ -67,5 +70,4 @@
     </section>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
  <script defer src="js/index.js"></script>
