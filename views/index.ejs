@@ -20,11 +20,11 @@
             </div>
 
             <div class="filter-pills">
-                <button class="pill active">All Events</button>
-                <button class="pill">Tech</button>
-                <button class="pill">Music</button>
-                <button class="pill">Workshops</button>
-                <button class="pill">Startups</button>
+                <button class="pill active" btn-type="All Events">All Events</button>
+                <button class="pill" btn-type="Tech">Tech</button>
+                <button class="pill" btn-type="Music">Music</button>
+                <button class="pill" btn-type="Workshops">Workshops</button>
+                <button class="pill" btn-type="Startups">Startups</button>
             </div>
         </div>
     </section>
@@ -32,13 +32,13 @@
         <div class="container">
             <div class="grid-container">
                 <% allEvent.forEach(event=> { %>
-                    <article class="event-card">
+                    <article class="event-card" data-date="<%= event.event_date.toISOString().split('T')[0] %>">
                         <div class="card-image">
                             <div class="img-placeholder"
                                 style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) ; ">
                                 <img src="images/1316.jpg" alt=""> <!-- width 300px  height: 180px; -->
                             </div>
-                            <span class="card-badge">
+                            <span class="card-badge" event-type="<%= event.event_type %>">
                                 <%= event.event_type %>
                             </span>
                             <span class="card-price">
@@ -58,7 +58,7 @@
                                     <%= event.event_start_time %> - <%= event.event_end_time %>
                                 </span>
                                 <span>
-                                    <%= event.event_date%>
+                                    <%= event.event_date.toISOString().split('T')[0]%>
                                 </span>
                             </div>
                             <button class="join-btn">Join Event</button>
@@ -70,4 +70,4 @@
     </section>
 
 </body>
- <script defer src="js/index.js"></script>
+<script defer src="js/index.js"></script>
