@@ -1,1 +1,85 @@
-Hi i am event page 
+<link rel="stylesheet" href="css/create-event.css">
+
+<section class="create-event-section">
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Create New Event</h1>
+                <p>Share your event with the world. Fill in the details below.</p>
+            </div>
+
+            <form action="/create-event" method="post" enctype="multipart/form-data" class="event-form">
+                <!-- Image Upload -->
+                <div class="form-group full-width">
+                    <label for="eventImage">Event Image</label>
+                    <div class="image-upload-container">
+                        <input type="file" id="eventImage" name="image" accept="image/*" required>
+                        <div class="upload-placeholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload or drag and drop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Title -->
+                <div class="form-group full-width">
+                    <label for="eventName">Event Name</label>
+                    <input type="text" id="eventName" name="event_name" placeholder="e.g., Tech Conference 2026" required>
+                </div>
+
+                <!-- Category & Price -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventType">Category</label>
+                        <select id="eventType" name="event_type" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="Tech">Tech</option>
+                            <option value="Music">Music</option>
+                            <option value="Workshops">Workshops</option>
+                            <option value="Startups">Startups</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventPrice">Price (Rs)</label>
+                        <input type="number" id="eventPrice" name="event_price" placeholder="0 for Free" min="0" required>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Date</label>
+                        <input type="date" id="eventDate" name="event_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" id="startTime" name="event_start_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">End Time</label>
+                        <input type="time" id="endTime" name="event_end_time" required>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group full-width">
+                    <label for="eventLocation">Location</label>
+                    <input type="text" id="eventLocation" name="event_location" placeholder="e.g., Expo Center, Lahore"
+                        required>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group full-width">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" name="event_description" rows="5"
+                        placeholder="Tell people about your event..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Publish Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
