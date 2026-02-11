@@ -1,5 +1,14 @@
 /* Create Event Page Styles */
+:root {
+    --primary: #1a1a1a;
+    --accent: #fa7e36;
+    --text-dark: #2b2b2b;
+    --text-light: #666666;
+    --bg-light: #f8f9fa;
+    --border-color: #e0e0e0;
 
+    --brand-gradient: linear-gradient(180deg, #fcd45c 0%, #fa7e36 40%, #d12354 70%, #751560 100%);
+}
 .create-event-section {
     padding: 60px 0;
     min-height: 80vh;
@@ -25,13 +34,15 @@
 }
 
 .form-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin: 0 0 6px 0;
+    letter-spacing: -1px;
     background: var(--brand-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: inline-block;
 }
 
 .form-header p {
@@ -142,7 +153,7 @@ textarea:focus {
 .submit-btn {
     width: 100%;
     padding: 15px;
-    background: var(--brand-gradient);
+    background: linear-gradient(135deg, #fa7e36 0%, #d12354 100%);
     color: white;
     border: none;
     border-radius: 50px;

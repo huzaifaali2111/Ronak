@@ -18,6 +18,8 @@ const port = process.env.PORT;
 
 // Public Files Listening 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 //template engine 

@@ -8,30 +8,31 @@
                 <p>Share your event with the world. Fill in the details below.</p>
             </div>
 
-            <form action="/create-event" method="post" enctype="multipart/form-data" class="event-form">
+            <!-- <form action="/create-event" method="post" enctype="multipart/form-data" class="event-form"> -->
+            <form action="/create-event" method="post"  class="event-form">
                 <!-- Image Upload -->
-                <div class="form-group full-width">
+                <!-- <div class="form-group full-width">
                     <label for="eventImage">Event Image</label>
                     <div class="image-upload-container">
-                        <input type="file" id="eventImage" name="image" accept="image/*" required>
+                        <input type="file" id="eventImage" name="image" accept="image/*" >
                         <div class="upload-placeholder">
                             <i class="fas fa-cloud-upload-alt"></i>
                             <span>Click to upload or drag and drop</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Title -->
                 <div class="form-group full-width">
                     <label for="eventName">Event Name</label>
-                    <input type="text" id="eventName" name="event_name" placeholder="e.g., Tech Conference 2026" required>
+                    <input type="text" id="eventName" name="event_name" placeholder="e.g., Tech Conference 2026" >
                 </div>
 
                 <!-- Category & Price -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="eventType">Category</label>
-                        <select id="eventType" name="event_type" required>
+                        <select id="eventType" name="event_type" >
                             <option value="" disabled selected>Select Category</option>
                             <option value="Tech">Tech</option>
                             <option value="Music">Music</option>
@@ -41,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="eventPrice">Price (Rs)</label>
-                        <input type="number" id="eventPrice" name="event_price" placeholder="0 for Free" min="0" required>
+                        <input type="number" id="eventPrice" name="event_price" placeholder="0 for Free" min="0" >
                     </div>
                 </div>
 
@@ -49,15 +50,15 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="eventDate">Date</label>
-                        <input type="date" id="eventDate" name="event_date" required>
+                        <input type="date" id="eventDate" name="event_date" >
                     </div>
                     <div class="form-group">
                         <label for="startTime">Start Time</label>
-                        <input type="time" id="startTime" name="event_start_time" required>
+                        <input type="time" id="startTime" name="event_start_time">
                     </div>
                     <div class="form-group">
-                        <label for="endTime">End Time</label>
-                        <input type="time" id="endTime" name="event_end_time" required>
+                        <label for="endTime">End Time</label> 
+                        <input type="time" id="endTime" name="event_end_time" >
                     </div>
                 </div>
 
@@ -65,14 +66,14 @@
                 <div class="form-group full-width">
                     <label for="eventLocation">Location</label>
                     <input type="text" id="eventLocation" name="event_location" placeholder="e.g., Expo Center, Lahore"
-                        required>
+                        >
                 </div>
 
                 <!-- Description -->
                 <div class="form-group full-width">
                     <label for="eventDescription">Description</label>
                     <textarea id="eventDescription" name="event_description" rows="5"
-                        placeholder="Tell people about your event..." required></textarea>
+                        placeholder="Tell people about your event..." ></textarea>
                 </div>
 
                 <!-- Submit Button -->
