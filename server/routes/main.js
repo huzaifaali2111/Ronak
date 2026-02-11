@@ -11,4 +11,9 @@ router.get('/', async(req, res)=>{
 });
 
 
+router.get('/create-event', async(req, res)=>{
+    res.render('create-event');
+});
+
+
 module.exports = router;
