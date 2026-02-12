@@ -63,3 +63,8 @@ let time = document.querySelectorAll('.time')
         card.innerHTML = `<i class="far fa-clock"></i> ${formatTime(start_time)} - ${formatTime(end_time)}`
     })
 
+
+
+
+
+    
