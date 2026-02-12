@@ -5,7 +5,7 @@ const eventschema = new Schema({
         type: String,
         required: true
     },
-    event_discription: {
+    event_description: {
         type: String,
     },
     event_location: {

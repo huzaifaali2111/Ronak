@@ -1,16 +1,6 @@
-/* --- Global & Variables --- */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
-:root {
-    --primary: #1a1a1a;
-    --accent: #fa7e36;
-    --text-dark: #2b2b2b;
-    --text-light: #666666;
-    --bg-light: #f8f9fa;
-    --border-color: #e0e0e0;
 
-    --brand-gradient: linear-gradient(180deg, #fcd45c 0%, #fa7e36 40%, #d12354 70%, #751560 100%);
-}
+
 
 body {
     margin: 0;

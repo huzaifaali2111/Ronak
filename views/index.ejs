@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="css/index.css">
 
-<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
-
-
 <body>
     <section class="hero-minimal">
         <div class="container">
@@ -54,8 +51,9 @@
                                 <span><i class="fas fa-map-marker-alt"></i>
                                     <%= event.event_location %>
                                 </span>
-                                <span><i class="far fa-clock"></i>
-                                    <%= event.event_start_time %> - <%= event.event_end_time %>
+                
+                                <span data-start = "<%= event.event_start_time %>" data-end = "<%= event.event_end_time %>" class="time">
+                                   
                                 </span>
                                 <span>
                                     <%= event.event_date.toISOString().split('T')[0]%>
