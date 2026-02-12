@@ -100,16 +100,15 @@
 
 .newsletter_form input {
     background: transparent;
-    border: none !important;
+    border: none ;
     color: #fff;
     padding: 10px 15px;
     width: 100%;
-    outline: none !important;
+    outline: none ;
     font-family: 'Fredoka', sans-serif;
 }
 .newsletter_form input:focus{
-    border: none !important;
-    outline: none !important;
+    box-shadow: none ;
     
 }
 

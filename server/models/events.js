@@ -32,5 +32,9 @@ const eventschema = new Schema({
         required: true,
         default: "free"
     },
+    event_image:{
+        type: String,
+        default: '1316.jpg'
+    }
 })
 module.exports = mongoose.model('event',eventschema);

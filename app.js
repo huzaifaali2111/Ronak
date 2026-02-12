@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const expressLayout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const connectDB = require('./server/config/db')
 connectDB();
@@ -30,6 +31,7 @@ app.set('view engine', 'ejs');
 
 // route file listening
 app.use('/', require('./server/routes/main'));
+// app.use('/uploads', express.static('uploads'));
 
 
 
