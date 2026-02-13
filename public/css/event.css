@@ -65,11 +65,7 @@ body .event-page{
 .event-meta .meta-item{
     font-size: 15px;
 }
-.event-meta .price{
-    margin-top: 6px;
-    font-weight: 700;
-    color: #111;
-}
+
 
 .event-actions{
     margin-top: 10px;

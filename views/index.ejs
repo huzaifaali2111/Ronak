@@ -39,8 +39,8 @@
                                 <%= event.event_type %>
                             </span>
                             <span class="card-price">
-                                <%= event.event_price==='free' || event.event_price===0 ? 'Free' : 'Rs ' +
-                                    event.event_price %>
+                                <%= event.event_price==='free' || event.event_price===0 ? 'Free' :  event.event_price + ' PKR' %>
+                                    
                             </span>
                         </div>
                         <div class="card-content">
@@ -56,7 +56,7 @@
                                    
                                 </span>
                                 <span>
-                                    <%= event.event_date.toISOString().split('T')[0]%>
+                                    <%= event.event_date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' , day: 'numeric'  })%>
                                 </span>
                             </div>
                             <a href="/event/<%= event._id  %>"><button class="join-btn">View Details</button></a>

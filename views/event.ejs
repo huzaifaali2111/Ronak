@@ -5,20 +5,32 @@
         <div class="event-media">
             <% if (event.event_image) { %>
                 <img src="/uploads/<%= event.event_image %>" alt="<%= event.event_name %>">
-            <% } else { %>
-                <div class="event-placeholder">No Image</div>
-            <% } %>
+                <% } else { %>
+                    <div class="event-placeholder">No Image</div>
+                    <% } %>
         </div>
 
         <div class="event-info">
-            <h1 class="event-title"><%= event.event_name %></h1>
+            <h1 class="event-title">
+                <%= event.event_name %>
+            </h1>
 
             <div class="event-meta">
-                <div class="meta-item"><strong>Date:</strong> <%= event.event_date %></div>
-                <div class="meta-item"><strong>Time:</strong> <%= event.event_start_time %> - <%= event.event_end_time %></div>
-                <div class="meta-item"><strong>Location:</strong> <%= event.event_location %></div>
-                <div class="meta-item"><strong>Type:</strong> <%= event.event_type %></div>
-                <div class="meta-item price"><strong>Price:</strong> <%= event.event_price ? ("Rs " + event.event_price) : "Free" %></div>
+                <div class="meta-item"><strong>Date:</strong>
+                    <%= event.event_date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' , day: 'numeric'  }) %>
+                       
+                </div>
+                <div class="meta-item time" data-start="<%= event.event_start_time %>"
+                    data-end="<%= event.event_end_time %>"><strong>Time:</strong> </div>
+                <div class="meta-item"><strong>Location:</strong>
+                    <%= event.event_location %>
+                </div>
+                <div class="meta-item"><strong>Type:</strong>
+                    <%= event.event_type %>
+                </div>
+                <div class="meta-item"><strong>Price:</strong>
+                    <%= (event.event_price>0) ? ( event.event_price + " PKR" ) : "Free" %>
+                </div>
             </div>
 
             <div class="event-actions">
@@ -29,6 +41,8 @@
 
     <section class="event-description">
         <h2>About this Event</h2>
-        <p><%= event.event_description %></p>
+        <p>
+            <%= event.event_description %>
+        </p>
     </section>
 </main>
