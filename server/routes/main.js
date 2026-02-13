@@ -26,6 +26,16 @@ router.get('/', async (req, res) => {
 });
 
 
+router.get('/event/:id', async (req, res) => {
+    let slug = req.params.id
+    let event = await events.findById(slug)
+    if (!event){
+        return res.status(404).send("No event Bro")
+    }
+    res.render('event',{event});
+});
+
+
 
 
 router.get('/create-event', async (req, res) => {

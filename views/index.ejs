@@ -59,7 +59,7 @@
                                     <%= event.event_date.toISOString().split('T')[0]%>
                                 </span>
                             </div>
-                            <button class="join-btn">Join Event</button>
+                            <a href="/event/<%= event._id  %>"><button class="join-btn">View Details</button></a>
                         </div>
                     </article>
                     <% }) %>
