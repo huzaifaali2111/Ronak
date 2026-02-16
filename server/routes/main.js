@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const events = require('../models/events');
+const join_event = require('../models/join-event');
 const multer = require('multer');
 const path = require('path');
 
@@ -8,7 +9,7 @@ const path = require('path');
 // Multer Image Handling in the Upload Folder
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public/uploads/'); 
+        cb(null, 'public/uploads/');
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + '-' + file.originalname);
@@ -29,10 +30,10 @@ router.get('/', async (req, res) => {
 router.get('/event/:id', async (req, res) => {
     let slug = req.params.id
     let event = await events.findById(slug)
-    if (!event){
+    if (!event) {
         return res.status(404).send("No event Bro")
     }
-    res.render('event',{event});
+    res.render('event', { event, slug });
 });
 
 
@@ -43,7 +44,7 @@ router.get('/create-event', async (req, res) => {
 });
 
 
-
+// Event Creation by User 
 router.post('/create-event', upload.single('image'), async (req, res) => {
     try {
         const { event_name, event_type, event_price, event_date, event_start_time, event_end_time, event_location, event_description } = req.body || {};
@@ -69,6 +70,27 @@ router.post('/create-event', upload.single('image'), async (req, res) => {
         res.status(500).send("Server Error");
     }
 
+});
+
+
+// Event Joining by User 
+router.post('/join-event', async (req, res) => {
+    try {
+        const { event_id, name, number, email } = req.body
+        const new_event = new join_event({
+            event_id: event_id,
+            user_name: name,
+            user_phone: number,
+            user_email: email,
+        });
+        console.log(new_event)
+        await new_event.save();
+        res.redirect(`/event/${event_id}`)
+
+    } catch (e) {
+        console.log('not saved there is issue')
+        console.log(e)
+    }
 });
 
 
