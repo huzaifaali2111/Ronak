@@ -4,7 +4,7 @@ const close_btn = document.getElementById("close_form");
 
 // Open Modal
 join_cta.addEventListener('click', () => {
-    joining_form.classList.add('active'); // Add active class to show
+    joining_form.classList.add('active'); 
 });
 
 // Close Modal via Button
