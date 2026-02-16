@@ -50,24 +50,27 @@
 </main>
 
 <section class="event-joining-form" id="joining_form">
-    <h3>Join <%= event.event_name %></h3>
-    <p> on <%= event.event_date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' , day: 'numeric'
-                        }) %></p>
-    <form action="/join-event" method="post">
-
-        <input type="hidden" name="event_id" value="<%=slug %>">
-
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Your Full Name..."> 
-        
-        <label for="number">Mobile Number </label>
-        <input type="tel" name="number" placeholder="03012030466"> 
-        
-        <label for="email">Email </label>
-        <input type="email" name="email" placeholder="enter your email"> 
- 
-        <button type="submit" class="join-btn">Join Event</button>
-    </form>
+    <div class="form-container">
+        <button class="close-btn" id="close_form">&times;</button>
+        <h3>Join <%= event.event_name %></h3>
+        <p> on <%= event.event_date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' , day: 'numeric'
+                            }) %></p>
+        <form action="/join-event" method="post">
+    
+            <input type="hidden" name="event_id" value="<%=slug %>">
+    
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Your Full Name..."> 
+            
+            <label for="number">Mobile Number </label>
+            <input type="tel" name="number" placeholder="03012030466"> 
+            
+            <label for="email">Email </label>
+            <input type="email" name="email" placeholder="enter your email"> 
+     
+            <button type="submit" class="join-btn">Join Event</button>
+        </form>
+    </div>
 </section>
 
 <script src="/js/event.js"></script>

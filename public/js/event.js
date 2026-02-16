@@ -1,7 +1,21 @@
-let joining_form = document.getElementById("joining_form");
-let join_cta = document.getElementById("join_cta");
+const joining_form = document.getElementById("joining_form");
+const join_cta = document.getElementById("join_cta");
+const close_btn = document.getElementById("close_form");
 
-join_cta.addEventListener('click', ()=>{
-    joining_form.style.display = 'block';
-})
+// Open Modal
+join_cta.addEventListener('click', () => {
+    joining_form.classList.add('active'); // Add active class to show
+});
+
+// Close Modal via Button
+close_btn.addEventListener('click', () => {
+    joining_form.classList.remove('active');
+});
+
+// Close Modal via Backdrop Click
+joining_form.addEventListener('click', (e) => {
+    if (e.target === joining_form) {
+        joining_form.classList.remove('active');
+    }
+});
 
