@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const events = require('../models/events');
 const join_event = require('../models/join-event');
+const auth = require('../models/auth');
 const multer = require('multer');
 const path = require('path');
 
@@ -83,7 +84,7 @@ router.post('/join-event', async (req, res) => {
             user_phone: number,
             user_email: email,
         });
-        console.log(new_event)
+
         await new_event.save();
         res.redirect(`/event/${event_id}`)
 
@@ -93,5 +94,24 @@ router.post('/join-event', async (req, res) => {
     }
 });
 
+
+// User Signup 
+router.post('/signup', async (req, res) => {
+    const { name, email, password, repassword } = req.body
+    if (password !== repassword) {
+        res.send("Your Password Should Match")
+    }
+    try {
+        const user = new auth({
+            userName: name,
+            userEmail: email,
+            password: password
+        })
+        await user.save();
+        res.redirect('/')
+    } catch (e) {
+        console.log(e)
+    }
+})
 
 module.exports = router;
