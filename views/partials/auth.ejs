@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/auth.css">
+
+<div class="auth-overlay" id="auth_overlay">
+    <div class="auth-modal" id="auth_form">
+        <button class="close-btn" id="auth_close_btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="auth-tabs">
+            <button class="tab-btn active" data-target="login_form">Login</button>
+            <button class="tab-btn" data-target="signup_form">Sign Up</button>
+        </div>
+
+        <div class="auth-content">
+            <!-- Login Form -->
+            <form action="/login" method="post" class="auth-form active" id="login_form">
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="submit-btn primary-btn">Login</button>
+                <p class="auth-footer">Don't have an account? <span class="switch-auth" data-target="signup_form">Sign Up</span></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form action="/signup" method="post" class="auth-form" id="signup_form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="repassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="submit-btn primary-btn">Sign Up</button>
+                <p class="auth-footer">Already have an account? <span class="switch-auth" data-target="login_form">Login</span></p>
+            </form>
+        </div>
+    </div>
+</div>
