@@ -5,6 +5,7 @@ const join_event = require('../models/join-event');
 const auth = require('../models/auth');
 const multer = require('multer');
 const path = require('path');
+const bcrypt = require('bcrypt');
 
 
 // Multer Image Handling in the Upload Folder
@@ -24,7 +25,7 @@ const upload = multer({ storage: storage });
 
 router.get('/', async (req, res) => {
     let allEvent = await events.find()
-    res.render('index', { allEvent: allEvent });
+    res.render('index', { allEvent: allEvent});
 });
 
 
@@ -97,7 +98,9 @@ router.post('/join-event', async (req, res) => {
 
 // User Signup 
 router.post('/signup', async (req, res) => {
+    let errorMessage = "";
     const { name, email, password, repassword } = req.body
+    const hashedPassword = await bcrypt.hash(password, 10);
     if (password !== repassword) {
         res.send("Your Password Should Match")
     }
@@ -105,7 +108,7 @@ router.post('/signup', async (req, res) => {
         const user = new auth({
             userName: name,
             userEmail: email,
-            password: password
+            password: hashedPassword
         })
         await user.save();
         res.redirect('/')
